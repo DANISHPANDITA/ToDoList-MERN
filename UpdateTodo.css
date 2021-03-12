@@ -1,0 +1,34 @@
+.updateTodoPage h2 {
+  margin-left: 45%;
+}
+.createTodoName {
+  color: rgb(124, 124, 124);
+  font-family: "Times New Roman";
+}
+.UpdateInput {
+  margin-left: 42%;
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+.UpdateInput input {
+  height: 4vh;
+  border-radius: 3px;
+  font-family: "Times New Roman";
+  font-size: 1.4em;
+  background-color: rgb(182, 182, 182);
+  color: rgb(61, 61, 61);
+}
+.UpdateInput button {
+  margin-top: 0.2vh;
+  background-color: rgb(240, 187, 88);
+  border: none;
+  outline: none;
+  border-radius: 3px;
+  font-size: 1.1em;
+  font-family: "Segeo UI";
+}
+.UpdateInput button:hover {
+  cursor: pointer;
+  background-color: rgb(216, 168, 79);
+}
