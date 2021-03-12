@@ -1,9 +1,9 @@
 import React from "react";
-import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import ListAll from "./ListAll";
 import UpdateTodo from "./UpdateTodo";
 import CreateTodos from "./CreateTodos";
+
 function App() {
   return (
     <div className="App">
