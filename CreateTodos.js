@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { useHistory } from "react-router";
 import { createNewTodo } from "./api.js";
 import "./CreateTodos.css";
+
 function CreateTodos() {
   const [newTodo, setNewTodo] = useState("");
   const history = useHistory();
+  
   const createTodo = () => {
     if (newTodo) {
       createNewTodo(newTodo);
@@ -13,6 +15,7 @@ function CreateTodos() {
       alert("No new Todo");
     }
   };
+  
   return (
     <div className="createNewTodo">
       <h2>
