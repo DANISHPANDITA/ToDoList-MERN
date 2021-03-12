@@ -5,12 +5,15 @@
   flex-direction: column;
   width: 30%;
 }
+
 .createNewTodo h2 {
   text-align: center;
 }
+
 .createNewTodo button {
   background-color: rgb(163, 159, 159);
 }
+
 .createNewTodo button:hover {
   cursor: pointer;
   background-color: rgb(117, 117, 117);
