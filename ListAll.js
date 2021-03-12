@@ -2,8 +2,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Delete } from "./api.js";
 import "./ListAll.css";
+
 function ListAll() {
   const [todos, setTodos] = useState([]);
+  
   useEffect(() => {
     const fetchData = async () => {
       await fetch("http://localhost:4000")
