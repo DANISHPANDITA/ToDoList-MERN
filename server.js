@@ -4,11 +4,12 @@ import mongoose from "mongoose";
 import Todos from "./model.js";
 
 const app = express();
-const url =
-  "mongodb+srv://DANISH:Pandita@0002@cluster0.5aaai.mongodb.net/Todos?retryWrites=true&w=majority";
+const url = "mongodb+srv://DANISH:Pandita@0002@cluster0.5aaai.mongodb.net/Todos?retryWrites=true&w=majority";
+const PORT = 4000;
 
 app.use(express.json());
 app.use(cors());
+
 mongoose
   .connect(url, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => {
@@ -18,8 +19,7 @@ mongoose
     console.log("Cound not connect");
   });
 
-const PORT = 4000;
-
+//Get all TODOS:
 app.get("/", (req, res) =>
   Todos.find((err, data) => {
     if (err) {
@@ -29,10 +29,13 @@ app.get("/", (req, res) =>
     }
   })
 );
+
+//GET A TODO BY ID:
 app.get("/:id", (req, res) => {
   Todos.findById(req.params.id).then((data) => res.status(200).send(data));
 });
 
+//UPLOAD A TODO:
 app.post("/upload", (req, res) => {
   const model = req.body;
   Todos.create(model, (err, data) => {
@@ -43,6 +46,8 @@ app.post("/upload", (req, res) => {
     }
   });
 });
+
+//UPDATE A TODO:
 app.patch("/:id", (req, res) => {
   Todos.findByIdAndUpdate(req.params.id, {
     $set: req.body,
@@ -54,9 +59,13 @@ app.patch("/:id", (req, res) => {
       res.status(500).send(err.message);
     });
 });
+
+//DELETE A TODO:
 app.delete("/:id", (req, res) => {
   Todos.findByIdAndRemove(req.params.id).exec();
 });
+
+//INITIAL CHECK:
 app.listen(PORT, () => {
   console.log(`Listening to port : ${PORT}`);
 });
