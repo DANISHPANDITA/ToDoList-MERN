@@ -18,6 +18,7 @@ function UpdateTodo() {
     };
     fetchDataById();
   }, [match.params.id]);
+  
   const onSubmit = () => {
     if (UpdatedTodo) {
       updateTodo(UpdatedTodo, match.params.id);
@@ -26,6 +27,7 @@ function UpdateTodo() {
       alert("No new Todo");
     }
   };
+  
   return (
     <div className="updateTodoPage">
       <h2>
