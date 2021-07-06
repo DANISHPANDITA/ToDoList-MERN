@@ -4,7 +4,7 @@ import mongoose from "mongoose";
 import Todos from "./model.js";
 
 const app = express();
-const url = "mongodb+srv://DANISH:Pandita@0002@cluster0.5aaai.mongodb.net/Todos?retryWrites=true&w=majority";
+const url = //URL provided from the mongodb
 const PORT = 4000;
 
 app.use(express.json());
